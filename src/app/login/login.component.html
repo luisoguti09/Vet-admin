@@ -1,0 +1,61 @@
+<div class=" mainLogin">
+  <div class="header">
+    <p-card header="Login" class="cardLogin">
+      <form action="login.component.ts" [formGroup]="form">
+        <img class="img" alt="Card" src="../../assets/logoVetOnline.jpeg" />
+        <ng-template pTemplate="header">
+          <img alt="Card" src="../../assets/logoVetOnline.jpeg" />
+        </ng-template>
+        <div class="input">
+          <label for="usuario"> Usuario: </label>
+          <input pInputText id="usuario" type="text" formControlName="usuario" type="email" />
+          <label for="pass"> Contraseña: </label>
+          <p-password formControlName="pass" [feedback]="false"></p-password>
+          <p-toast></p-toast>
+          <p-button pRipple label="Login" class="p-button-success" (click)="loginAdmin()"></p-button>
+        </div>
+      </form>
+    </p-card>
+  </div>
+  <div>
+
+  </div>
+  <script type="text/javascript">
+    new FinisherHeader({
+      "count": 100,
+      "size": {
+        "min": 2,
+        "max": 8,
+        "pulse": 0
+      },
+      "speed": {
+        "x": {
+          "min": 0,
+          "max": 0.4
+        },
+        "y": {
+          "min": 0,
+          "max": 0.6
+        }
+      },
+      "colors": {
+        "background": "#cb24ea",
+        "particles": [
+          "#fbfcca",
+          "#d7f3fe",
+          "#ffd0a7"
+        ]
+      },
+      "blending": "overlay",
+      "opacity": {
+        "center": 1,
+        "edge": 0
+      },
+      "skew": -2,
+      "shapes": [
+        "c"
+      ]
+    });
+  </script>
+
+</div>

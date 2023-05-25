@@ -1,0 +1,25 @@
+<app-side-bar></app-side-bar>
+<div class="card">
+    <p-table [value]="vets" responsiveLayout="stack" [breakpoint]="'960px'" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th>Name</th>
+                <th>Aceptaciones</th>
+                <th>Category</th>
+                <th>Contactos</th>
+                <th>Status</th>
+                <th>Reviews</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-vet let-columns="columns">
+            <tr>
+                <td><span class="p-column-title">Name</span>{{vet.name}}</td>
+                <td><span class="p-column-title">Aceptaciones</span>{{vet.aceptaciones}}</td>
+                <td><span class="p-column-title">Category</span>{{vet.category}}</td>
+                <td><span class="p-column-title">Contactos</span>{{vet.contactos}}</td>
+                <td><p-tag [value]="vet.status" severity="succes"></p-tag></td>
+                <td><span class="p-column-title">Reviews</span><p-rating [ngModel]="vet.rating" [readonly]="true" [cancel]="false"></p-rating></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

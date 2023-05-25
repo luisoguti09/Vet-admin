@@ -1,0 +1,32 @@
+<app-side-bar></app-side-bar>
+<div class="card flex flex-column md:flex-row gap-3" [formGroup]="form">
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-pencil"></i>
+        </span>
+        <input pInputText formControlName="codigo" placeholder="Codigo" />
+    </div>
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-pencil"></i>
+        </span>
+        <input type="text" formControlName="valor" pInputText placeholder="Valor" />
+        <span class="p-inputgroup-addon"></span>
+    </div>
+    <p-toast></p-toast>
+    <div class="card flex justify-content-center">
+        <span class="p-buttonset">
+            <button pButton pRipple label="Guardar" icon="pi pi-check" (click)="guardarCambios()" 
+            label="Cambiar" class="p-button-success"></button>
+            <button pButton pRipple label="Cancelar" icon="pi pi-times" (click)="guardarCambios()" 
+            label="Cancelar" class="p-button-danger"></button>
+        </span>
+    </div>
+    <button (click)="getValues()">Ingrese los Valores</button>
+    <div *ngIf="values">
+      <p>Comisiones: {{ values.comisiones }}</p>
+      <p>Ganbrutas: {{ values.ganbrutas }}</p>
+      <p>Gannetas: {{ values.gannetas }}</p>
+    </div>
+</div>

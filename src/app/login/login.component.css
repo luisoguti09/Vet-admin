@@ -1,0 +1,37 @@
+.img {
+  position: relative;
+  width: 100px;
+  display: flex;
+  margin-left: 100px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+:host::ng-deep .p-inputtext {
+  color: #ddd;
+  margin-right: 50px;
+  border-radius: 5px;
+  width: 350px;
+  height: 50px;
+  border-color: #fff;
+  border-style: none;
+}
+:host::ng-deep .p-card-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  border-color: rgb(96, 93, 99);
+}
+
+.p-button-success {
+  padding-top: 20px;
+  justify-content: center;
+  position: relative;
+  margin-left: 140px;
+}/*# sourceMappingURL=login.component.css.map */

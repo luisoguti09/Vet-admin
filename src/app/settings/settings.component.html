@@ -1,0 +1,27 @@
+<app-side-bar></app-side-bar>
+<div class="card">
+    <p-toolbar>
+        <div class="p-toolbar-group-start">
+            <p-button label="Nuevo" icon="pi pi-plus" class="mr-2" routerLink="/detail-settings"
+                routerLinkActive="active"></p-button>
+        </div>
+    </p-toolbar>
+</div>
+<div class="card">
+    <p-table [value]="settings" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Codigo</th>
+                <th>Valor</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-settings>
+            <tr>
+                <td>{{ settings.codigo }}</td>
+                <td>{{ settings.valor }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<router-outlet></router-outlet>
