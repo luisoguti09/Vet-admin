@@ -17,12 +17,13 @@ export class SettingsService {
     this.httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
       }),
     };
    }
 
   crearSetting(codigo: string, valor: string){
-   return this.httpClient.post(`${this.url}/vet-online-admin/api/settings.php`, {
+   return this.httpClient.post(`/vet-online-admin/api/settings.php`, {
       codigo, 
       valor
     }, this.httpOptions);
@@ -32,6 +33,16 @@ export class SettingsService {
     return this.httpClient.get(`${this.url}/vet-online-admin/api/settings.php`);
   }
 
-  
+  deleteSettings(codigo: string, valor: string){
+    return this.httpClient.delete(`${this.url}/vet-online-admin/api/settings.php`);
+  }
+
+  updateSettings(codigo: string, valor: any): Observable<any> {
+    const data = {
+      codigo: codigo,
+      valor: valor
+    };
+    return this.httpClient.put(`${this.url}/vet-online-admin/api/settings.php`, data);
+  }
 
 }

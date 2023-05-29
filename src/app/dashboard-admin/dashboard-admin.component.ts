@@ -12,17 +12,10 @@ export class DashboardAdminComponent implements OnInit {
   sidebarVisible!: boolean;
 
   options: any;
- 
-  
 
-  constructor(){
- 
-   }
-  ngOnInit(): void {
+  constructor(){ }
 
-    
-    
-  }
+  ngOnInit() { }
    
    
 

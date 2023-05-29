@@ -13,12 +13,16 @@
             <tr>
                 <th>Codigo</th>
                 <th>Valor</th>
+                <th>Editar</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-settings>
             <tr>
                 <td>{{ settings.codigo }}</td>
                 <td>{{ settings.valor }}</td>
+                <td>
+                    <p-button pRipple label="Editar" class="p-button-success" (click)="modifSettings()"></p-button>
+                </td>
             </tr>
         </ng-template>
     </p-table>

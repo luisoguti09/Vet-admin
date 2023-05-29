@@ -17,7 +17,6 @@ export class DetailSettingsComponent {
 
   public form!: FormGroup;
   public sett: any[] = [];
-  public values: any;
 
   constructor(
     private settingServ: SettingsService,
@@ -33,16 +32,16 @@ export class DetailSettingsComponent {
       valor: [null, Validators.required]
     });
   }
-
   
-  guardarCambios(){
-    
+  guardarCambios(){  
    this.settingServ.crearSetting(
    this.form.get('codigo')?.value, 
    this.form.get('valor')?.value).subscribe(res => {
-    if (!!res) {
-      this.router.navigate(['settings']);
-      this.showCambio;
+    if (!!res) { 
+      this.showCreado();
+      setTimeout(()=>{
+        this.router.navigate(['settings']);
+      }, 2000)
       console.log(res);
     } else {
       this.showCancel;
@@ -50,31 +49,29 @@ export class DetailSettingsComponent {
     );
   }
 
+  modifSettings(codigo: string, valor : string){
+    this.settingServ.updateSettings(codigo, valor).subscribe(res=>{
+      if (!!res) {
+        this.showCambio();
+        setTimeout(()=>{
+          this.router.navigate(['settings']);
+        }, 2000)
+        console.log(res);
+      } else {
+        this.showCancel;
+      }
+    })
+  }
+
   showCancel() {
     this.messageService.add({ severity: 'error', summary: 'Cancelado', detail: 'No se ha hecho ningun Cambio' });
+  }
+
+  showCreado() {
+    this.messageService.add({ severity: 'succes', summary: 'Exito', detail: 'Se creo una nueva setting correctamente' });
   }
 
   showCambio() {
     this.messageService.add({ severity: 'succes', summary: 'Exito', detail: 'Se guardaron los cambios correctamente' });
   }
-
-  getValues() {
-    const comisiones = 10;
-    const ganbrutas = 20;
-    const gannetas = 30;
-    
-    this.detaServ.getValues(comisiones, ganbrutas, gannetas).subscribe(
-      res => {
-        if (res.success) {
-          this.values = res.data;
-        } else {
-          console.log('No se encuentran los datos.');
-        }
-      },
-      error => {
-        console.log('Ocurrio un error:', error);
-      }
-    );
-  }
-
 }

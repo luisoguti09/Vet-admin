@@ -25,7 +25,7 @@ export class ChartsComponent implements OnInit {
         data: [20, 40, 60, 80, 100, 120, 140, 160, 180]
       }, {
         name: 'Ingresos',
-        data: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+        data: [100, 200, 300, 400, 500, 600, 700, 800, 1]
       }],
       charts: {
         type: 'bar',

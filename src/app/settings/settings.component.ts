@@ -63,6 +63,20 @@ export class SettingsComponent implements OnInit {
     );
   }
 
+  updateSettings(codigo: string, valor : string){
+    this.settingsServ.updateSettings(codigo, valor).subscribe(res=>{
+      if (!!res) {
+        this.showCambio();
+        setTimeout(()=>{
+          this.router.navigate(['detail-settings']);
+        }, 2000)
+        console.log(res);
+      } else {
+        this.showError();
+      }
+    })
+  }
+
   editarSettings(){
     this.settingsServ.getSettings().subscribe((data)=>{
       this.router.navigate(['abm-veterinarios']);
@@ -72,6 +86,10 @@ export class SettingsComponent implements OnInit {
 
   showError() {
     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Complete todos los campos' });
+  }
+
+  showCambio() {
+    this.messageService.add({ severity: 'succes', summary: 'Exito', detail: 'Se guardaron los cambios correctamente' });
   }
 
 }

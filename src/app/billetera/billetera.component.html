@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Tu Billetera</title>
-</head>
-<body>
-  <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    Comisiones: <input type="number" name="comisiones"><br>
-    Ganancias Brutas: <input type="number" name="ganbrutas"><br>
-    Ganancias Netas: <input type="number" name="gannetas"><br>
-    <input type="submit" value="Submit">
-  </form>
-</body>
-</html>
+<app-side-bar></app-side-bar>
+<div>
+    <p-card>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <div id="chart">
+        </div>
+    </p-card>
+</div>

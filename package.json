@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -21,6 +21,7 @@
     "angular-template": "^2.4.0",
     "apexcharts": "^3.40.0",
     "gsap": "^3.11.5",
+    "lodash": "^4.17.21",
     "ng-apexcharts": "^1.7.6",
     "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
