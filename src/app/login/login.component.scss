@@ -1,9 +1,4 @@
-.img{
-    position: relative;
-    width: 100px;
-    display: flex;
-    margin-left: 100px;
-}
+
 
 .input{
     display: flex;
@@ -13,6 +8,15 @@
 }
 
 :host::ng-deep {
+    
+.logo {
+
+    background-image: url("/assets/logoVetOnline.jpeg");
+    position: relative;
+    width: 100px;
+    display: flex;
+    margin-left: 100px;
+}
     .p-inputtext {
         
         color: #ddd;
@@ -39,3 +43,4 @@
     position: relative;
     margin-left: 140px;
 }
+

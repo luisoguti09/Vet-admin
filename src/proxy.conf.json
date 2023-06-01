@@ -1,0 +1,7 @@
+{
+    "/vet-online-admin/api/*" : {
+        "target": "https://vetonline.cu.ma/vet-admin/",
+        "secure": false,
+        "logLevel": "debug" 
+    }
+}  

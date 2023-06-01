@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  url = 'http://localhost';
+  url = 'https://vetonline.cu.ma/vet-admin/';
 
   httpOptions: any;
 

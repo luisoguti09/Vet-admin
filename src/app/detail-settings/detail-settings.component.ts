@@ -33,7 +33,7 @@ export class DetailSettingsComponent {
     });
   }
   
-  guardarCambios(){  
+  crearRegistros(){  
    this.settingServ.crearSetting(
    this.form.get('codigo')?.value, 
    this.form.get('valor')?.value).subscribe(res => {
@@ -47,20 +47,6 @@ export class DetailSettingsComponent {
       this.showCancel;
     }},
     );
-  }
-
-  modifSettings(codigo: string, valor : string){
-    this.settingServ.updateSettings(codigo, valor).subscribe(res=>{
-      if (!!res) {
-        this.showCambio();
-        setTimeout(()=>{
-          this.router.navigate(['settings']);
-        }, 2000)
-        console.log(res);
-      } else {
-        this.showCancel;
-      }
-    })
   }
 
   showCancel() {

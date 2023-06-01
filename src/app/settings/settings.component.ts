@@ -4,7 +4,7 @@ import { MenuItem, MessageService } from 'primeng/api';
 import { SettingsService } from '../services/settings.service';
 import { Router } from '@angular/router';
 import { Veterinarios } from '../abm-veterinarios/veterinarios';
-import { AbmVeterinariosComponent } from '../abm-veterinarios/abm-veterinarios.component';
+
 
 @Component({
   selector: 'app-settings',
@@ -16,7 +16,7 @@ export class SettingsComponent implements OnInit {
 
   public form!: any;
   public  items!: MenuItem[];
-  public url = 'http://localhost';
+  public url = 'https://vetonline.cu.ma/vet-admin/';
   public data!: Veterinarios;
 
   public settings: any;
@@ -34,7 +34,7 @@ export class SettingsComponent implements OnInit {
       {
           label: 'Editar',
           icon: 'pi pi-external-link',
-          url: 'http://localhost'
+          url: 'https://vetonline.cu.ma/vet-admin/'
       }
   ];
     this.settingsServ.getSettings().subscribe((data) => {
@@ -63,8 +63,8 @@ export class SettingsComponent implements OnInit {
     );
   }
 
-  updateSettings(codigo: string, valor : string){
-    this.settingsServ.updateSettings(codigo, valor).subscribe(res=>{
+  updateSettings(id: any, codigo: any, valor : any){
+    this.settingsServ.updateSettings(id, codigo, valor).subscribe(res=>{
       if (!!res) {
         this.showCambio();
         setTimeout(()=>{

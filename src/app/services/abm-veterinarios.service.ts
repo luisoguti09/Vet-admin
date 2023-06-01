@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AbmVeterinariosService {
 
   httpOptions: any;
-  apiUrl = 'http://localhost';
+  apiUrl = 'https://vetonline.cu.ma/vet-admin/';
 
   constructor(
     private httpClient: HttpClient   

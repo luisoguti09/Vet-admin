@@ -52,7 +52,7 @@ import { BilleteraComponent } from './billetera/billetera.component';
     NotificacionesComponent,
     SideBarComponent,
     ChartsComponent,
-    BilleteraComponent
+    BilleteraComponent,
   ],
   imports: [
     BrowserModule,

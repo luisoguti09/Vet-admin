@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AbmVeterinariosComponent implements OnInit{
 
-  url = 'http://localhost';
+  url = 'https://vetonline.cu.ma/vet-admin/';
 
   httpOptions: any;
 

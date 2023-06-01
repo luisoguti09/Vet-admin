@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class BilleteraService {
 
-  url = 'http://localhost';
+  url = 'https://vetonline.cu.ma/vet-admin/';
 
   public httpOptions: any;
 

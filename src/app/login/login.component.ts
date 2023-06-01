@@ -3,13 +3,14 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { ViewEncapsulation } from '@angular/compiler';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [MessageService]
+  providers: [MessageService],
 })
 export class LoginComponent implements OnInit {
 

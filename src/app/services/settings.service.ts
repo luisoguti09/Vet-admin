@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SettingsService {
 
-  url = 'http://localhost';
+  url = 'https://vetonline.cu.ma/vet-admin/';
 
   httpOptions: any;
 
@@ -37,10 +37,11 @@ export class SettingsService {
     return this.httpClient.delete(`${this.url}/vet-online-admin/api/settings.php`);
   }
 
-  updateSettings(codigo: string, valor: any): Observable<any> {
+  updateSettings(id: any, codigo: string, valor: any): Observable<any> {
     const data = {
+      id: id,
       codigo: codigo,
-      valor: valor
+      valor: valor,
     };
     return this.httpClient.put(`${this.url}/vet-online-admin/api/settings.php`, data);
   }
