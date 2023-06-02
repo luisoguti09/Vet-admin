@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  url = 'https://vetonline.cu.ma/vet-admin/';
+  url = 'https://vetonline.cu.ma';
 
   httpOptions: any;
 
@@ -23,7 +23,7 @@ export class LoginService {
 
   loginSucc(usuario: any, pass: any) : Observable<any> {
     
-    return this.httpClient.get(`${this.url}/vet-online-admin/api/login.php?usuario=${usuario}&password=${pass}`);
+    return this.httpClient.get(`${this.url}/login.php?usuario=${usuario}&password=${pass}`);
   }
   
   guardar(nombre: string, apellido: string, email: string, pass: string, tipoUsuario: string ){

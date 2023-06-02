@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class BilleteraService {
 
-  url = 'https://vetonline.cu.ma/vet-admin/';
+  url = 'https://vetonline.cu.ma';
 
   public httpOptions: any;
 
@@ -21,11 +21,11 @@ export class BilleteraService {
   }
 
   getPayments(){
-    return this.httpClient.get(`${this.url}/vet-online-admin/api/billetera.php`);
+    return this.httpClient.get(`${this.url}/billetera.php`);
   }
 
   showPayments(comisiones: number, ganbrutas: number, gannetas: number){
-    return this.httpClient.post(`$(this.url)/vet-online-admin/api/billetera.php`,{
+    return this.httpClient.post(`$(this.url)/billetera.php`,{
       comisiones,
       ganbrutas,
       gannetas

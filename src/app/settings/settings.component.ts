@@ -34,7 +34,7 @@ export class SettingsComponent implements OnInit {
       {
           label: 'Editar',
           icon: 'pi pi-external-link',
-          url: 'https://vetonline.cu.ma/vet-admin/'
+          url: 'https://vetonline.cu.ma'
       }
   ];
     this.settingsServ.getSettings().subscribe((data) => {
@@ -49,7 +49,7 @@ export class SettingsComponent implements OnInit {
     private messageService: MessageService,
   ){}
 
-  modifSettings() {
+  crearSettings() {
     this.settingsServ.crearSetting(
       this.form?.get('codigo')?.value,
       this.form?.get('valor')?.value)
@@ -64,7 +64,11 @@ export class SettingsComponent implements OnInit {
   }
 
   updateSettings(id: any, codigo: any, valor : any){
-    this.settingsServ.updateSettings(id, codigo, valor).subscribe(res=>{
+    this.settingsServ.updateSettings(
+       id,
+       codigo,
+       valor
+       ).subscribe(res=>{
       if (!!res) {
         this.showCambio();
         setTimeout(()=>{
@@ -77,12 +81,7 @@ export class SettingsComponent implements OnInit {
     })
   }
 
-  editarSettings(){
-    this.settingsServ.getSettings().subscribe((data)=>{
-      this.router.navigate(['abm-veterinarios']);
-      alert('Modificaciones Guardadas');
-    })
-  }
+ 
 
   showError() {
     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Complete todos los campos' });

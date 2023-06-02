@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SettingsService {
 
-  url = 'https://vetonline.cu.ma/vet-admin/';
+  url = 'https://vetonline.cu.ma';
 
   httpOptions: any;
 
@@ -23,18 +23,26 @@ export class SettingsService {
    }
 
   crearSetting(codigo: string, valor: string){
-   return this.httpClient.post(`/vet-online-admin/api/settings.php`, {
+   return this.httpClient.post(`${this.url}/settings.php`, {
+      codigo, 
+      valor
+    }, this.httpOptions);
+  }
+
+  updateSetting(id: string, codigo: string, valor: string){
+    return this.httpClient.post(`${this.url}/settings.php`, {
+      id,
       codigo, 
       valor
     }, this.httpOptions);
   }
 
   getSettings(): Observable<any> {
-    return this.httpClient.get(`${this.url}/vet-online-admin/api/settings.php`);
+    return this.httpClient.get(`${this.url}/settings.php`);
   }
 
   deleteSettings(codigo: string, valor: string){
-    return this.httpClient.delete(`${this.url}/vet-online-admin/api/settings.php`);
+    return this.httpClient.delete(`${this.url}/settings.php`);
   }
 
   updateSettings(id: any, codigo: string, valor: any): Observable<any> {
@@ -43,7 +51,7 @@ export class SettingsService {
       codigo: codigo,
       valor: valor,
     };
-    return this.httpClient.put(`${this.url}/vet-online-admin/api/settings.php`, data);
+    return this.httpClient.put(`${this.url}/settings.php`, data);
   }
 
 }

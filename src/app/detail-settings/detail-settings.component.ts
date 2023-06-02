@@ -49,6 +49,23 @@ export class DetailSettingsComponent {
     );
   }
 
+  modificarRegistros(){  
+    this.settingServ.updateSetting(
+      this.form.get('id')?.value,
+    this.form.get('codigo')?.value, 
+    this.form.get('valor')?.value).subscribe(res => {
+     if (!!res) { 
+       this.showCambio();
+       setTimeout(()=>{
+         this.router.navigate(['settings']);
+       }, 2000)
+       console.log(res);
+     } else {
+       this.showCancel;
+     }},
+     );
+   }
+
   showCancel() {
     this.messageService.add({ severity: 'error', summary: 'Cancelado', detail: 'No se ha hecho ningun Cambio' });
   }

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AbmVeterinariosService {
 
   httpOptions: any;
-  apiUrl = 'https://vetonline.cu.ma/vet-admin/';
+  apiUrl = 'https://vetonline.cu.ma';
 
   constructor(
     private httpClient: HttpClient   
@@ -98,7 +98,7 @@ getVets() {
 }
 
 modifSettings(){
-  return this.httpClient.get(`${this.apiUrl}/vet-online-admin/api/settings.php`);
+  return this.httpClient.get(`${this.apiUrl}/settings.php`);
 }
 
 getValues(comisiones: number, ganbrutas: number, gannetas: number): Observable<any> {
